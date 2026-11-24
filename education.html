@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Education | Belleville Dental</title>
+
+  <!-- Bootstrap CSS + Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+  <style>
+    /* ---------- Our own CSS ---------- */
+    .hero { background: #eef4ff; padding: 60px 0; }
+    .hero span { color: #0d6efd; }
+    .card-icon { font-size: 2rem; color: #0d6efd; }
+    .section-title { text-align: center; font-weight: 700; }
+    .section-sub { text-align: center; color: #6c757d; margin-bottom: 30px; }
+    .quiz-box { border: 1px solid #dee2e6; border-radius: 8px; padding: 20px; margin-bottom: 20px; }
+    .correct { border-color: #198754; background: #f0fff4; }
+    .wrong { border-color: #dc3545; background: #fff5f5; }
+    .explain { margin-top: 10px; font-size: 14px; }
+  </style>
+</head>
+<body>
+
+  <!-- ========== HERO ========== -->
+  <section class="hero">
+    <div class="container">
+      <h1 class="fw-bold">Learn the basics, <span>protect your smile.</span></h1>
+      <p class="lead text-secondary">Read the theory, then take a short quiz to check what you learned.</p>
+      <a href="#theory" class="btn btn-primary">Start Reading</a>
+      <a href="#quiz" class="btn btn-outline-primary">Go to Quiz</a>
+    </div>
+  </section>
+
+  <!-- ========== THEORY SECTION ========== -->
+  <section class="py-5" id="theory">
+    <div class="container">
+      <h2 class="section-title">Dental Health Theory</h2>
+      <p class="section-sub">Understand how your teeth work and how to look after them.</p>
+
+      <div class="row g-4">
+
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 p-3">
+            <i class="bi bi-diagram-3 card-icon"></i>
+            <h5 class="mt-2">1. Parts of a Tooth</h5>
+            <p class="text-secondary mb-0">
+              <b>Enamel</b> is the hard outer layer that protects the tooth.
+              <b>Dentin</b> lies under it and is softer.
+              <b>Pulp</b> is the center with nerves and blood vessels.
+              Once enamel is damaged, the body cannot grow it back.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 p-3">
+            <i class="bi bi-bug card-icon"></i>
+            <h5 class="mt-2">2. How Cavities Form</h5>
+            <p class="text-secondary mb-0">
+              Plaque is a sticky layer of bacteria on teeth. When we eat sugar,
+              bacteria turn it into acid. This acid slowly dissolves enamel
+              and creates a hole called a cavity.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 p-3">
+            <i class="bi bi-droplet card-icon"></i>
+            <h5 class="mt-2">3. Gum Disease</h5>
+            <p class="text-secondary mb-0">
+              If plaque stays on teeth, it hardens into tartar and irritates gums.
+              Early stage is <b>gingivitis</b> (red, bleeding gums).
+              If ignored, it becomes <b>periodontitis</b> and can loosen teeth.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 p-3">
+            <i class="bi bi-brush card-icon"></i>
+            <h5 class="mt-2">4. Correct Brushing</h5>
+            <p class="text-secondary mb-0">
+              Brush <b>two times a day for two minutes</b> with fluoride toothpaste.
+              Hold the brush at a slight angle to the gums and use gentle circles.
+              Change your toothbrush every <b>3 months</b>.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 p-3">
+            <i class="bi bi-cup-straw card-icon"></i>
+            <h5 class="mt-2">5. Food and Habits</h5>
+            <p class="text-secondary mb-0">
+              Limit sweets, soft drinks and sticky snacks. Drink more water.
+              Floss once a day to clean between teeth, where the brush cannot reach.
+              Avoid smoking and chewing tobacco.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 p-3">
+            <i class="bi bi-calendar-check card-icon"></i>
+            <h5 class="mt-2">6. Regular Check-ups</h5>
+            <p class="text-secondary mb-0">
+              Visit the dentist <b>every 6 months</b>, even without pain.
+              Many problems start silently and are easy to treat if found early.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== QUIZ SECTION ========== -->
+  <section class="py-5 bg-light" id="quiz">
+    <div class="container" style="max-width: 800px;">
+      <h2 class="section-title">Quick Quiz</h2>
+      <p class="section-sub">Answer all questions, then click Submit.</p>
+
+      <!-- Questions are added here by JavaScript -->
+      <div id="quizArea"></div>
+
+      <div class="text-center">
+        <button class="btn btn-primary" onclick="checkQuiz()">Submit Answers</button>
+        <button class="btn btn-outline-secondary" onclick="resetQuiz()">Try Again</button>
+      </div>
+
+      <!-- Result message -->
+      <div id="result" class="alert mt-4 text-center d-none"></div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="text-center text-secondary py-3 border-top">
+    &copy; 2026 Belleville Dental
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    // ---------- Quiz data ----------
+    // answer = index of the correct option (0 = first option)
+    var questions = [
+      {
+        q: "Which is the hard outer layer of a tooth?",
+        options: ["Pulp", "Enamel", "Dentin"],
+        answer: 1,
+        explain: "Enamel is the hardest outer layer and protects the tooth."
+      },
+      {
+        q: "What turns sugar into acid in the mouth?",
+        options: ["Bacteria in plaque", "Water", "Fluoride"],
+        answer: 0,
+        explain: "Bacteria in plaque make acid from sugar, and this acid damages enamel."
+      },
+      {
+        q: "How long should you brush each time?",
+        options: ["30 seconds", "1 minute", "2 minutes"],
+        answer: 2,
+        explain: "Brushing for two minutes, twice a day, cleans all surfaces properly."
+      },
+      {
+        q: "Bleeding and red gums are an early sign of what?",
+        options: ["Gingivitis", "Whitening", "Strong teeth"],
+        answer: 0,
+        explain: "Gingivitis is early gum disease and can be reversed with good cleaning."
+      },
+      {
+        q: "How often should you visit the dentist for a check-up?",
+        options: ["Only when in pain", "Every 6 months", "Once in 5 years"],
+        answer: 1,
+        explain: "Regular check-ups every 6 months help find problems early."
+      }
+    ];
+
+    // ---------- Show questions on the page ----------
+    function showQuiz() {
+      var html = "";
+      for (var i = 0; i < questions.length; i++) {
+        html += '<div class="quiz-box" id="box' + i + '">';
+        html += '<p class="fw-semibold">' + (i + 1) + '. ' + questions[i].q + '</p>';
+        for (var j = 0; j < questions[i].options.length; j++) {
+          html += '<div class="form-check">';
+          html += '<input class="form-check-input" type="radio" name="q' + i + '" id="q' + i + 'o' + j + '" value="' + j + '">';
+          html += '<label class="form-check-label" for="q' + i + 'o' + j + '">' + questions[i].options[j] + '</label>';
+          html += '</div>';
+        }
+        html += '<div class="explain" id="exp' + i + '"></div>';
+        html += '</div>';
+      }
+      document.getElementById("quizArea").innerHTML = html;
+    }
+
+    // ---------- Check answers ----------
+    function checkQuiz() {
+      var score = 0;
+      for (var i = 0; i < questions.length; i++) {
+        var chosen = document.querySelector('input[name="q' + i + '"]:checked');
+        var box = document.getElementById("box" + i);
+        var exp = document.getElementById("exp" + i);
+        box.classList.remove("correct", "wrong");
+
+        if (chosen && Number(chosen.value) === questions[i].answer) {
+          score++;
+          box.classList.add("correct");
+          exp.innerHTML = "✅ Correct! " + questions[i].explain;
+        } else {
+          box.classList.add("wrong");
+          exp.innerHTML = "❌ Correct answer: <b>" + questions[i].options[questions[i].answer] + "</b>. " + questions[i].explain;
+        }
+      }
+
+      // Final message
+      var result = document.getElementById("result");
+      result.classList.remove("d-none", "alert-success", "alert-warning", "alert-danger");
+      var msg = "Your score: " + score + " / " + questions.length + ". ";
+      if (score >= 4) {
+        result.classList.add("alert-success");
+        msg += "Great! You understand dental care well.";
+      } else if (score >= 2) {
+        result.classList.add("alert-warning");
+        msg += "Good try. Read the theory again to improve.";
+      } else {
+        result.classList.add("alert-danger");
+        msg += "Please read the theory section again and retry.";
+      }
+      result.innerHTML = msg;
+    }
+
+    // ---------- Reset ----------
+    function resetQuiz() {
+      showQuiz();
+      document.getElementById("result").classList.add("d-none");
+    }
+
+    showQuiz();
+  </script>
+</body>
+</html>
